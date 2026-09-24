@@ -115,6 +115,15 @@
     line-height:1.25;
   }
 
+  .nota{
+    margin-top:5px;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    line-height:1.3;
+    color:#CBD5E1;
+  }
+
   .abv{flex:0 0 auto;text-align:right}
   .abv b{
     font-family:var(--display);
@@ -224,7 +233,10 @@ const BARRA = [
   { nombre:"Tropical",     estilo:"IPA",                  abv:"6.5", color:"#C9701A" },
   { nombre:"Reesa",        estilo:"Peanut butter stout",  abv:"6.0", color:"#3B2113" },
   { nombre:"Pinky Travel", estilo:"Seltzer fresa-sandía", abv:"4.5", color:"#E85D7A" },
-  { nombre:"Tropicoqueta", estilo:"Seltzer mango-piña",   abv:"4.5", color:"#F58B1F" }
+  { nombre:"Tropicoqueta", estilo:"Seltzer mango-piña",   abv:"4.5", color:"#F58B1F" },
+  { nombre:"Morena Salvaje", estilo:"Imperial stout",     abv:"9.0", color:"#1A0E07",
+    nota:"Medalla de plata · Copa Guerreras del Lúpulo" },
+  { nombre:"310",          estilo:"Amber",                abv:"4.5", color:"#A8431A" }
 ];
 
 const INVITADA = {
@@ -241,6 +253,7 @@ const fila = b => `
     <div class="info">
       <div class="name">${b.nombre}</div>
       <div class="style">${b.estilo}</div>
+      ${b.nota ? `<div class="nota">${b.nota}</div>` : ""}
     </div>
     <div class="abv"><b>${b.abv}%</b><span>ABV</span></div>
   </article>`;
